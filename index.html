@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UTM Builder Engine</title>
+    <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/en/1/11/Fast_text.png" type="image/x-icon">
+    <!-- UIkit -->
+    <link rel="stylesheet" href="assets/css/uikit-rtl.min.css" />
+    <script src="assets/js/uikit-icons.min.js"></script>
+    <style>
+        html {
+            background: #f9f9f9;
+        }
+        * {
+            font-family: IranSans !important;
+        }
+        a {
+            color: orange !important;
+        }
+        #page-footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            color: gray;
+            text-align: center;
+        }
+        #page-footer a {
+            color: black !important;
+        }
+        img {
+            width: 20px;
+            height: 20px;
+            text-align: middle;
+        }
+    </style>
+
+    
+</head>
+<body>
+    <div class="uk-padding">
+        <h1>UTM</h1>
+        <input type="text" class="uk-input" name="link" id="link" onchange="updateInput(this.value)" placeholder="drop the link here.">
+        
+        <hr class="uk-divider-icon">
+
+        <div class="uk-padding uk-card uk-card-default uk-card-body uk-border-rounded">
+            <img id="tel" src="telegram.png" alt="telegram"><p id="telegram"></p>
+
+            <br>
+    
+            <img id="twt"  src="twitter.png" alt="twitter"><p id="twitter"></p>
+    
+    
+            <br>
+            <img id="ins"  src="instagram.png" alt="instagram"><p id="instagram"></p>
+    
+        </div>
+
+    </div>
+
+    <footer id="page-footer" class="uk-margin-top uk-background-muted uk-box-shadow-medium">
+        <div class="uk-container uk-padding-small">
+            <p class="uk-text-small">© <?php echo date('Y'); ?> | <a href="mailto:arbazargani1998@gmail.com">Alireza Bazargani</a>, All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        function updateInput(link){
+            document.getElementById("telegram").innerHTML = link + '&utm_source=tl&utm_medium=textLink&utm_campaign=social';
+            document.getElementById("twitter").innerHTML = link + '&utm_source=tw&utm_medium=textLink&utm_campaign=social';
+            document.getElementById("instagram").innerHTML = link + '&utm_source=in&utm_medium=textLink&utm_campaign=social';
+        }
+    </script>
+</body>
+</html>
